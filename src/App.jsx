@@ -2,7 +2,7 @@ import Homepage from "./pages/Homepage";
 import CountryPage from "./pages/SingleCountryPage";
 import { ThemeProvider } from "./context/ThemeContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainLayout from "./Layouts/MainLayout";
+import MainLayout from "./layouts/MainLayout";
 import NotFoundPage from "./pages/NotFoundPage";
 
 const App = () => {
