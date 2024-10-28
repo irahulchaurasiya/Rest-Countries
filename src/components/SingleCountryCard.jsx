@@ -1,5 +1,4 @@
 
-
 const SingleCountryCard = () => {
     return (
         <div key={country.cca3} className={`shadow-md rounded-lg ${darkMode ? 'bg-darkBlueDME' : 'bg-whiteDMTLME'}`}>
