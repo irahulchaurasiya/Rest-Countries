@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import NotFoundPage from "./NotFoundPage";
 import { useTheme } from "../context/ThemeContext";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import Spinner from "../components/Spinner";
 
 const SingleCountryPage = () => {
   const { cca3 } = useParams();
@@ -34,7 +35,11 @@ const SingleCountryPage = () => {
   }, [cca3]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Spinner />
+      </div>
+    );
   }
 
   if (!country) {
