@@ -15,10 +15,12 @@ const Homepage = () => {
   const [sortBySelected, setSortBySelected] = useState("");
   const [searchCountries, setSearchCountries] = useState("");
 
+  const url = import.meta.env.VITE_URL;
+
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch("https://restcountries.com/v3.1/all");
+        const response = await fetch(`${url}/all`);
         const data = await response.json();
 
         setCountries(data);
