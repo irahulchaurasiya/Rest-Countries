@@ -11,12 +11,12 @@ const SingleCountryPage = () => {
   const [country, setCountry] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const url = import.meta.env.VITE_URL;
+
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch(
-          `https://restcountries.com/v3.1/alpha/${cca3}`
-        );
+        const response = await fetch(`${url}/alpha/${cca3}`);
         const data = await response.json();
 
         setCountry(data[0]);
@@ -81,7 +81,7 @@ const SingleCountryPage = () => {
           </div>
         </div>
         <div className="sm:flex sm:justify-between">
-          <div className="w-full md:w-[50%] mb-8 sm:mb-0">
+          <div className="w-full md:w-[50%] pl-4 pr-4 sm:ml-8 sm:mr-8 mb-8 sm:mb-0">
             <img
               src={country.flags.svg}
               alt={country.name.common}
@@ -89,7 +89,7 @@ const SingleCountryPage = () => {
             />
           </div>
 
-          <div className="w-full sm:w-[50%] sm:ml-16 px-4">
+          <div className="w-full sm:w-[50%] pl-4 pr-4 sm:mr-8 sm:ml-8 px-4">
             <h1 className="mb-4 text-4xl font-extrabold">
               {country.name.common}
             </h1>
