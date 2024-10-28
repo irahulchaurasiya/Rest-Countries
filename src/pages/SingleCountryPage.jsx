@@ -142,7 +142,11 @@ const SingleCountryPage = () => {
                     <button
                       onClick={() => navigate(`/detail/${country}`)}
                       key={index}
-                      className="p-1 ml-2 border border-gray-500 bg-gray-200 rounded-md hover:bg-gray-400"
+                      className={` ${
+                        darkMode
+                          ? "bg-veryDarkBlueDMB text-whiteDMTLME hover:bg-gray-700"
+                          : "bg-whiteDMTLME text-veryDarkBlueLMT"
+                      } p-1 ml-2 border border-gray-500 rounded-md hover:bg-gray-200`}
                     >
                       {country}
                     </button>
