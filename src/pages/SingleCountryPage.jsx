@@ -52,7 +52,7 @@ const SingleCountryPage = () => {
     ? Object.values(country.languages).join(", ")
     : "N/A";
 
-  const borderCountries = country.borders ? country.borders.join(", ") : "None";
+  const borderCountries = country.borders ? country.borders : [];
 
   return (
     <div
@@ -81,7 +81,7 @@ const SingleCountryPage = () => {
           </div>
         </div>
         <div className="sm:flex sm:justify-between">
-          <div className="w-full md:w-[50%] pl-4 pr-4 sm:ml-8 sm:mr-8 mb-8 sm:mb-0">
+          <div className="w-full sm:w-[50%] pl-4 pr-4 sm:ml-8 sm:mr-8 mb-8 sm:mb-0">
             <img
               src={country.flags.svg}
               alt={country.name.common}
@@ -95,45 +95,59 @@ const SingleCountryPage = () => {
             </h1>
             <div className="w-full sm:flex sm:justify-between">
               <div className="w-full sm:w-[45%] flex flex-col mb-2 sm:mb-0">
-                <span className="mb-2 text-lg">
+                <div className="mb-2 text-lg">
                   <span className="mr-1 font-bold">Native Name:</span>
                   <span>{nativeName}</span>
-                </span>
-                <span className="mb-2 text-lg">
+                </div>
+                <div className="mb-2 text-lg">
                   <span className="mr-1 font-bold">Population:</span>
                   <span>{country.population.toLocaleString()}</span>
-                </span>
-                <span className="mb-2 text-lg">
+                </div>
+                <div className="mb-2 text-lg">
                   <span className="mr-1 ont-bold">Region:</span>
                   <span>{country.region}</span>
-                </span>
-                <span className="mb-2 text-lg">
+                </div>
+                <div className="mb-2 text-lg">
                   <span className="mr-1font-bold">Sub Region:</span>
                   <span>{country.subregion}</span>
-                </span>
-                <span className="mb-2 text-lg">
+                </div>
+                <div className="mb-2 text-lg">
                   <span className="mr-1 font-bold">Capital:</span>
                   <span>{country.capital}</span>
-                </span>
+                </div>
               </div>
               <div className="w-full sm:w-[45%] flex flex-col">
-                <span className="mb-2 text-lg">
+                <div className="mb-2 text-lg">
                   <span className="mr-1 font-bold">Top Level Domain:</span>
                   <span>{country.tld[0]}</span>
-                </span>
-                <span className="mb-2 text-lg">
+                </div>
+                <div className="mb-2 text-lg">
                   <span className="mr-1 font-bold">Currencies:</span>
                   <span>{currencies}</span>
-                </span>
-                <span className="mb-2 text-lg">
+                </div>
+                <div className="mb-2 text-lg">
                   <span className="mr-1 font-bold">Languages:</span>
                   <span>{languages}</span>
-                </span>
+                </div>
               </div>
             </div>
             <div className="mb-2">
               <h3 className="font-medium text-lg">Border Countries: </h3>
-              <p className="text-sm">{borderCountries}</p>
+              <div className="text-sm">
+                {borderCountries.length > 0 ? (
+                  borderCountries.map((country, index) => (
+                    <button
+                      onClick={() => navigate(`/detail/${country}`)}
+                      key={index}
+                      className="p-1 ml-2 border border-gray-500 bg-gray-200 rounded-md hover:bg-gray-400"
+                    >
+                      {country}
+                    </button>
+                  ))
+                ) : (
+                  <span>None</span>
+                )}
+              </div>
             </div>
           </div>
         </div>
