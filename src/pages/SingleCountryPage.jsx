@@ -10,6 +10,7 @@ const SingleCountryPage = () => {
   const { darkMode } = useTheme();
   const [country, setCountry] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const url = import.meta.env.VITE_URL;
 
@@ -17,11 +18,13 @@ const SingleCountryPage = () => {
     const fetchCountries = async () => {
       try {
         const response = await fetch(`${url}/alpha/${cca3}`);
+        if (!response.ok) throw new Error("Country Not Found");
         const data = await response.json();
 
         setCountry(data[0]);
       } catch (error) {
         console.log("error while fetching data", error);
+        setError(error.message);
       } finally {
         setLoading(false);
       }
