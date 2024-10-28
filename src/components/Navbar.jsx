@@ -50,7 +50,7 @@ const Navbar = ({
     setSearchCountries(e.target.value);
   };
   return (
-    <div
+    <nav
       className={`flex flex-col h-auto p-10 sm:flex-row justify-between w-full sm:h-20 border-box sm:pl-16 sm:pr-16 ${
         darkMode
           ? "bg-veryDarkBlueDMB text-whiteDMTLME"
@@ -131,7 +131,7 @@ const Navbar = ({
           <option value="descendingArea">By Descending Area</option>
         </select>
       </div>
-    </div>
+    </nav>
   );
 };
 
