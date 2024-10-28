@@ -14,6 +14,7 @@ const Homepage = () => {
   const [filterBySubRegion, setFilterBySubRegion] = useState("");
   const [sortBySelected, setSortBySelected] = useState("");
   const [searchCountries, setSearchCountries] = useState("");
+  const [error, setError] = useState(null);
 
   const url = import.meta.env.VITE_URL;
 
@@ -21,11 +22,13 @@ const Homepage = () => {
     const fetchCountries = async () => {
       try {
         const response = await fetch(`${url}/all`);
+        if (!response.ok) throw new Error("Failed to fetch countries.");
         const data = await response.json();
 
         setCountries(data);
       } catch (error) {
         console.log("error while fetching data", error);
+        setError(error.message);
       } finally {
         setLoading(false);
       }
