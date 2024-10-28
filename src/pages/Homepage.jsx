@@ -3,6 +3,7 @@ import { useTheme } from "../context/ThemeContext";
 import CountryCard from "../components/CountryCard";
 import Navbar from "../components/Navbar";
 import { filterCountries } from "../util/filterCountries";
+import Spinner from "../components/Spinner";
 
 const Homepage = () => {
   const { darkMode } = useTheme();
@@ -70,7 +71,7 @@ const Homepage = () => {
         setSearchCountries={setSearchCountries}
       />
       {loading ? (
-        <div>Loading...</div>
+        <div><Spinner/></div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-32 p-10 sm:pl-16 sm:pr-16 bg-white-50">
           {filteredCountries.map((country) => (
