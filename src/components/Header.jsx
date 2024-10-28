@@ -15,13 +15,13 @@ const Header = () => {
     >
       <div className="inline-block text-xl font-bold">Where in the world?</div>
       <div className="flex">
-        <div className="flex pt-1" onClick={toggleTheme}>
+        <button className="flex pt-1" onClick={toggleTheme}>
           <img
             className="h-5 w-5 cursor-pointer"
             src={darkMode ? light : dark}
-            alt="No icons"
+            alt={darkMode ? "Switch to light mode" : "Switch to dark mode"}
           />
-        </div>
+        </button>
         <div className="text-lg ml-2">
           {darkMode ? "Light Mode" : "Dark Mode"}
         </div>
