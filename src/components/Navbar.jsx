@@ -10,7 +10,6 @@ const Navbar = ({
   countries,
 }) => {
   const { darkMode } = useTheme();
-
   const [subregions, setSubregions] = useState([]);
 
   const handleRegions = (e) => {
@@ -29,7 +28,7 @@ const Navbar = ({
               (country) => country.region.toLowerCase() === selectedRegion
             )
             .map((country) => country.subregion)
-            .filter((subregion) => subregion)
+            .filter(Boolean)
         ),
       ];
 
