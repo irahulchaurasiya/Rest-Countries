@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import search from "../assets/icons/search.svg";
 import { useTheme } from "../context/ThemeContext";
 import { useState } from "react";
@@ -77,7 +78,7 @@ const Navbar = ({
           onChange={handleCountrySearch}
         />
       </div>
-      <div className="inline-block flex flex-col sm:flex-row">
+      <div className="flex flex-col sm:flex-row">
         <select
           onChange={handleRegions}
           className={`h-10 w-36 p-2 shadow-md rounded-md focus:outline-none ${

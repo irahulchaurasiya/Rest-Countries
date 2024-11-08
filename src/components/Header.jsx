@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header
-      className={`flex pb-0 sm:flex-row place-content-between align-center pb-5 p-10 drop-shadow-md sm:pl-16 sm:pr-16 ${
+      className={`flex sm:flex-row place-content-between align-center pb-5 p-10 drop-shadow-md sm:pl-16 sm:pr-16 ${
         darkMode
           ? "bg-veryDarkBlueDMB text-whiteDMTLME"
           : "bg-whiteDMTLME text-veryDarkBlueLMT"

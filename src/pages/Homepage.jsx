@@ -36,7 +36,7 @@ const Homepage = () => {
     };
 
     fetchCountries();
-  }, []);
+  }, [url]);
 
   useEffect(() => {
     const filteredCountries = filterCountries(
