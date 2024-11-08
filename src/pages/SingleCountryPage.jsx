@@ -11,6 +11,7 @@ const SingleCountryPage = () => {
   const { darkMode } = useTheme();
   const [country, setCountry] = useState([]);
   const [loading, setLoading] = useState(true);
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
 
   const url = import.meta.env.VITE_URL;
