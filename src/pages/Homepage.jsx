@@ -15,6 +15,7 @@ const Homepage = () => {
   const [filterBySubRegion, setFilterBySubRegion] = useState("");
   const [sortBySelected, setSortBySelected] = useState("");
   const [searchCountries, setSearchCountries] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
 
   const url = import.meta.env.VITE_URL;
