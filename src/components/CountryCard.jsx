@@ -7,12 +7,12 @@ const CountryCard = ({ country }) => {
 
   return (
     <div
-      key={country.cca3}
+      key={country.cca2}
       className={`shadow-md rounded-lg ${
         darkMode ? "bg-darkBlueDME" : "bg-whiteDMTLME"
       }`}
     >
-      <Link to={`/detail/${country.cca3}`}>
+      <Link to={`/detail/${country.cca2}`}>
         <div className="h-[200px] w-full mb-8">
           <img
             src={country.flags.png}
