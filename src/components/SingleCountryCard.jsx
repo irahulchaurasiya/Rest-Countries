@@ -48,10 +48,10 @@ const SingleCountryCard = ({
             </div>
           </div>
           <div className="w-full sm:w-[45%] flex flex-col">
-            <div className="mb-2 text-lg">
+{/*             <div className="mb-2 text-lg">
               <span className="mr-1 font-bold">Top Level Domain:</span>
               <span>{country.tld[0]}</span>
-            </div>
+            </div> */}
             <div className="mb-2 text-lg">
               <span className="mr-1 font-bold">Currencies:</span>
               <span>{currencies}</span>
