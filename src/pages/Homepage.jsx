@@ -23,7 +23,7 @@ const Homepage = () => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch(`${url}/all`);
+        const response = await fetch(`https://restcountries.com/v3.1/all?fields=name,capital,flags,population,region,cca2,subregion,currencies,languages,borders`);
         if (!response.ok) throw new Error("Failed to fetch countries.");
         const data = await response.json();
 
