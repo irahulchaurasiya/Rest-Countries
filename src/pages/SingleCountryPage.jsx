@@ -38,7 +38,7 @@ const SingleCountryPage = () => {
     };
 
     fetchCountries();
-  }, [cca3, url]);
+  }, [cca2, url]);
 
   if (loading) {
     return (
