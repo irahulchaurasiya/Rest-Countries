@@ -8,7 +8,7 @@ import Spinner from "../components/Spinner";
 import SingleCountryCard from "../components/SingleCountryCard";
 
 const SingleCountryPage = () => {
-  const { cca3 } = useParams();
+  const { cca2 } = useParams();
   const navigate = useNavigate();
   const { darkMode } = useTheme();
   const [country, setCountry] = useState([]);
