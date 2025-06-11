@@ -9,12 +9,15 @@ import SingleCountryCard from "../components/SingleCountryCard";
 
 const SingleCountryPage = () => {
   const { cca2 } = useParams();
+  const params = useParams();
   const navigate = useNavigate();
   const { darkMode } = useTheme();
   const [country, setCountry] = useState([]);
   const [loading, setLoading] = useState(true);
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
+
+  console.log(params, '234');
 
   const url = import.meta.env.VITE_URL;
 
