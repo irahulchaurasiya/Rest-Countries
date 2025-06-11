@@ -21,7 +21,7 @@ const SingleCountryPage = () => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch(`${url}/alpha/${cca3}`);
+        const response = await fetch(`${url}/alpha/${cca2}`);
         if (!response.ok) throw new Error("Country Not Found");
         const data = await response.json();
 
