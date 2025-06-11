@@ -8,7 +8,7 @@ import Spinner from "../components/Spinner";
 import SingleCountryCard from "../components/SingleCountryCard";
 
 const SingleCountryPage = () => {
-  const { cca2 } = useParams();
+  const { cca3 } = useParams();
   const params = useParams();
   const navigate = useNavigate();
   const { darkMode } = useTheme();
@@ -24,7 +24,7 @@ const SingleCountryPage = () => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch(`${url}/alpha/${cca2}`);
+        const response = await fetch(`${url}/alpha/${cca3}`);
         if (!response.ok) throw new Error("Country Not Found");
         const data = await response.json();
 
@@ -38,7 +38,7 @@ const SingleCountryPage = () => {
     };
 
     fetchCountries();
-  }, [cca2, url]);
+  }, [cca3, url]);
 
   if (loading) {
     return (
